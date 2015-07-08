@@ -27,7 +27,7 @@
 
   <packaging>bundle</packaging>
   <name>Everit - SMS API</name>
-  <description>API of the usage of SMS implementations.</description>
+  <description>API to sending SMS.</description>
 
   <properties>
     <projectpath>sms-api</projectpath>
@@ -73,6 +73,17 @@
         <groupId>org.apache.felix</groupId>
         <artifactId>maven-bundle-plugin</artifactId>
         <extensions>true</extensions>
+        <configuration>
+          <instructions>
+            <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+            <Import-Package>
+              *
+            </Import-Package>
+            <Export-Package>
+              org.everit.sms;version=1.0.0
+            </Export-Package>
+          </instructions>
+        </configuration>
       </plugin>
     </plugins>
   </build>
